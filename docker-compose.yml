@@ -8,7 +8,7 @@ services:
       MYSQL_DATABASE: khaddemApp
 
   spring-boot-app:
-    image: justelyes/spring:latest
+    image: nourelhoudaouni102/backend:latest
     container_name: spring
     ports:
       - "8089:8089"
