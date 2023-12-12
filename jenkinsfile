@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                git 'https://github.com/MedWessim159/5NIDS1-G5-Kaddem.git'
+            }
+        }
+
+        stage('Maven Clean') {
+            steps {
+                sh 'mvn clean'
+            }
+        }
+
+        stage('Maven test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Sonar install') {
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
+    }
+}
