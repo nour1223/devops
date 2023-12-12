@@ -1,0 +1,16 @@
+version: '3'
+services:
+  database:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: khaddemApp
+
+  spring-boot-app:
+    image: justelyes/spring:latest
+    container_name: spring
+    ports:
+      - "8089:8089"
+    depends_on:
+      - database
